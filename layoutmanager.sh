@@ -5,7 +5,7 @@
    #                 GNOME Layout Manager              		   #
    #           Copyright (C) 2017 Bill Mavromatis                  #
    #       Licensed under the GNU General Public License 3.0       #
-   #                                                               #
+   #           Modified by Chris Titus			           #
    #  https://github.com/bill-mavromatis/gnome-layout-manager      #
    #                                                               #
    #################################################################
