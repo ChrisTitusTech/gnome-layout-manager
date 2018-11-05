@@ -188,30 +188,21 @@ if [[ $LAYOUT == "windows" || $LAYOUT == "macos" || $LAYOUT == "unity" ]]; then
 			EXTENSION_URL=${GNOME_SITE}$(curl -s "${JSON}" | sed -e 's/^.*download_url[\": ]*\([^\"]*\).*$/\1/') 
 
 			# download extension archive
-			if [[ ${EXT_UUID} == "gnomeGlobalAppMenu@lestcape" ]]; then #For Global Menu use GitHub instead
-				EXTENSION_URL="https://github.com/bill-mavromatis/Gnome-Global-AppMenu/archive/master.zip"	
-				wget --header='Accept-Encoding:none' -O "${TMP_ZIP}" "${EXTENSION_URL}"		
-				# unzip extension to installation folder
-				mkdir -p "${EXTENSION_PATH}"/"${EXT_UUID}"
-				unzip -o "${TMP_ZIP}" -d /tmp/
-				cp -R "/tmp/Gnome-Global-AppMenu-master/gnomeGlobalAppMenu@lestcape/" -d "${EXTENSION_PATH}"
-				chmod +r "${EXTENSION_PATH}"/"${EXT_UUID}"/*
-			elif [[ ${EXT_UUID} == "pixel-saver@deadalnix.me" ]]; then #For Pixel Saver use GitHub instead
-				EXTENSION_URL="https://github.com/bill-mavromatis/pixel-saver/archive/master.zip"	
-				wget --header='Accept-Encoding:none' -O "${TMP_ZIP}" "${EXTENSION_URL}"		
-				# unzip extension to installation folder
-				mkdir -p "${EXTENSION_PATH}"/"${EXT_UUID}"
-				unzip -o "${TMP_ZIP}" -d /tmp/
-				cp -R "/tmp/pixel-saver-master/pixel-saver@deadalnix.me/" -d "${EXTENSION_PATH}"
-				chmod +r "${EXTENSION_PATH}"/"${EXT_UUID}"/*
-			else    #for everything else use GNOME site
+			if [[ ${EXT_UUID} == "pixel-saver@deadalnix.me" ]]; then #For Pixel Saver use GitHub instead
+                                EXTENSION_URL="https://github.com/deadalnix/pixel-saver/archive/master.zip"     
+                                wget --header='Accept-Encoding:none' -O "${TMP_ZIP}" "${EXTENSION_URL}"         
+                                # unzip extension to installation folder
+                                mkdir -p "${EXTENSION_PATH}"/"${EXT_UUID}"
+                                unzip -o "${TMP_ZIP}" -d /tmp/
+                                cp -R "/tmp/pixel-saver-master/pixel-saver@deadalnix.me/" -d "${EXTENSION_PATH}"
+                                chmod +r "${EXTENSION_PATH}"/"${EXT_UUID}"/*
+                        else    #for everything else use GNOME site
 				wget --header='Accept-Encoding:none' -O "${TMP_ZIP}" "${EXTENSION_URL}"		
 				# unzip extension to installation folder
 				mkdir -p "${EXTENSION_PATH}"/"${EXT_UUID}"
 				unzip -oq "${TMP_ZIP}" -d "${EXTENSION_PATH}"/"${EXT_UUID}"
 				chmod +r "${EXTENSION_PATH}"/"${EXT_UUID}"/*
 			fi
-
 		fi
 		rm -f "${TMP_ZIP}" #remove temp files
 	done
