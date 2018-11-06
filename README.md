@@ -20,7 +20,7 @@ Coming soon: [HUD](https://github.com/p-e-w/plotinus) (currently [resolving](htt
 #### Install Instructions:
 Download and run the script as user (no root required):
 ```
-wget https://raw.githubusercontent.com/bill-mavromatis/gnome-layout-manager/master/layoutmanager.sh
+wget https://raw.githubusercontent.com/ChrisTitusTech/gnome-layout-manager/master/layoutmanager.sh
 chmod +x layoutmanager.sh
 ./layoutmanager.sh
 ```
