@@ -1,4 +1,5 @@
 *Notice: This software is alpha and under development. Please use at your own risk.*
+*Modifications made by Chris Titus to Update the project's repositories and fix issues with dependancies*
 
 # GNOME Layout Manager
 A bash script that batch installs and tweaks GNOME extensions as well as GTK/Shell themes. There are currently three options available: Unity, Windows and macOS.
